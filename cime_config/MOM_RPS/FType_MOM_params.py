@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 from CIME.ParamGen.paramgen import ParamGen
 
-MAX_LINE_LENGTH = 1024
+MAX_LINE_LENGTH = 256
 
 class FType_MOM_params(ParamGen):
     """Encapsulates data and read/write methods for MOM6 case parameter files: MOM_input, user_nl."""
@@ -233,33 +233,80 @@ class FType_MOM_params(ParamGen):
                 if module != "Global":
                     MOM_override.write("%" + module + "\n\n")
 
-def wrap_MOM_string(var, val, prefix = None, max_len=MAX_LINE_LENGTH):
+def wrap_MOM_string(var, val, prefix=None, max_len=MAX_LINE_LENGTH):
+    """
+    Format a MOM6-style parameter assignment string, wrapping across multiple lines if necessary using an & as described in MOM6/src/framework/MOM_file_parser.F90.
+
+    Parameters
+    ----------
+    var : str
+        The name of the parameter variable (e.g., 'OBC_SEGMENT_001_DATA').
+    val : str 
+        The value to assign to the variable
+    prefix : str or None, optional
+        Optional prefix to include before the variable assignment. Used for "#override " If None, uses just "<var> = ".
+    max_len : int, optional
+        Maximum allowed line length. Lines exceeding this will be wrapped with continuation lines.
+
+    Returns
+    -------
+    lines : list of str
+        List of strings representing wrapped lines in MOM6-compatible Fortran format.
+    
+    Examples
+    --------
+    >>> wrap_MOM_string('varname', 'a_long_value_string', prefix='  ', max_len=20)
+    ['  varname = a_long_val"&',
+     '"ue_string"']
+    """
+
+    # Add passed in prefix or default to "var = "
     if prefix is None:
         prefix = var + " = "
     else:
         prefix = prefix + var + " = "
+
+    # Convert value to string
     val_str = str(val)
+
+    # Create list of lines
     lines = []
 
+    # If the value is empty, return an empty list, if not start iterating
     while val_str:
+
+        # On the first line
         if not lines:
-            # First line
+
+            # Calculate space for the first line based on the maximum length allowed. 
             space_left = max_len - len(prefix)
             chunk = val_str[:space_left]
             val_str = val_str[space_left:]
             line = prefix + chunk
+
+            # If there is more value string left, add continuation character
             if val_str:
                 line += "\"&"
+
+            # Add line
             lines.append(line)
+        
+        # For continuation lines
         else:
-            # Continuation lines
+            # Add Quotation
             continuation_prefix = "\""
+
+            # Calculate Space
             space_left = max_len - len(continuation_prefix)
             chunk = val_str[:space_left]
             val_str = val_str[space_left:]
             line = continuation_prefix + chunk
+
+            # If there is more value string left, add continuation character
             if val_str:
                 line += "\"&"
+
+            # Add line
             lines.append(line)
 
     return lines
