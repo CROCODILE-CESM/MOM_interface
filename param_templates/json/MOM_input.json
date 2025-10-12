@@ -1880,7 +1880,7 @@
             "$OCN_GRID == \"tx2_3v2\"": 1.0,
             "$OCN_GRID == \"tx0.25v1\"": 0.25,
             "$OCN_GRID == \"MISOMIP\"": 1.0,
-            "$MOM6_DOMAIN_TYPE == \"REGIONAL\"": 0.25
+            "$MOM6_DOMAIN_TYPE == \"REGIONAL\"": 1.0
          }
       },
       "ENERGETICS_SFC_PBL": {
