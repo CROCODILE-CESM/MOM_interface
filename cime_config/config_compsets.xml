@@ -85,6 +85,16 @@
     <lname>1850_DATM%JRA_SLND_SICE_MOM6%REGIONAL%MARBL-BIO_SROF_SGLC_SWAV</lname>
   </compset>
 
+  <compset>
+    <alias>CR_JRA_GLOFAS</alias>
+    <lname>1850_DATM%JRA_SLND_SICE_MOM6%REGIONAL_DROF%GLOFAS_SGLC_SWAV</lname>
+  </compset>
+
+  <compset>
+    <alias>CR1850MARBL_JRA_GLOFAS</alias>
+    <lname>1850_DATM%JRA_SLND_SICE_MOM6%REGIONAL%MARBL-BIO_DROF%GLOFAS_SGLC_SWAV</lname>
+  </compset>
+
   <!-- G compsets -->
 
   <compset>

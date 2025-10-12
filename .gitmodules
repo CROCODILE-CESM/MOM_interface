@@ -2,7 +2,7 @@
   path = MOM6
   url = https://github.com/CROCODILE-CESM/MOM6.git
   fxDONOTUSEurl = https://github.com/CROCODILE-CESM/MOM6.git
-    fxtag = workshop_2025.001
+    fxtag = workshop_2025.002
     fxrequired = AlwaysRequired
 
 [submodule "stochastic_physics"]
