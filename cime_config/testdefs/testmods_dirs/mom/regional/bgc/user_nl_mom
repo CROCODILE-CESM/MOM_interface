@@ -1,4 +1,4 @@
-INPUTDIR = /glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/testing_data/panama
+INPUTDIR = /glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/testing_data/panama-bgc
 TRIPOLAR_N = False
 REENTRANT_X = False
 REENTRANT_Y = False
@@ -62,7 +62,7 @@ MARBL_FEVENTFLUX_FILE = feventflux_5gmol_panama1_5490e0.nc
 READ_RIV_FLUXES = True
 
 ! River nutrient flux file
-RIV_FLUX_FILE = river_nutrients_panama1_5490e0_nnsm.nc
+RIV_FLUX_FILE = river_nutrients_panama1_e5cba7_nnsm.nc
 
 ! Initial conditions
 INIT_LAYERS_FROM_Z_FILE = True
