@@ -5,14 +5,14 @@ REENTRANT_Y = False
 NIGLOBAL = 60
 NJGLOBAL = 60
 GRID_CONFIG = mosaic
-GRID_FILE = ocean_hgrid_panama1_352fd1.nc
+GRID_FILE = ocean_hgrid_panama1_5490e0.nc
 TOPO_CONFIG = file
-TOPO_FILE = ocean_topog_panama1_352fd1.nc
+TOPO_FILE = ocean_topog_panama1_5490e0.nc
 MAXIMUM_DEPTH = 3431.7499950346473
 MINIMUM_DEPTH = 9.5
 NK = 75
 COORD_CONFIG = none
-ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_352fd1.nc
+ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_5490e0.nc
 REGRIDDING_COORDINATE_MODE = Z*
 
 ! Timesteps (based on grid resolution)
@@ -47,7 +47,7 @@ OBC_TIDE_CONSTITUENTS = "M2"
 OBC_TIDE_REF_DATE = 2000, 01, 01
 
 ! Maximum number of tracer fields, bumped to accomodate MARBL tracers
-MAX_FIELDS = 200
+MAX_FIELDS = 400
 
 ! MARBL initial conditions file
 MARBL_TRACERS_IC_FILE = ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc
@@ -62,7 +62,7 @@ MARBL_FEVENTFLUX_FILE = feventflux_5gmol_panama1_5490e0.nc
 READ_RIV_FLUXES = True
 
 ! River nutrient flux file
-RIV_FLUX_FILE = river_nutrients_panama1_e5cba7_nnsm.nc
+RIV_FLUX_FILE = river_nutrients_panama1_5490e0_nnsm.nc
 
 ! Initial conditions
 INIT_LAYERS_FROM_Z_FILE = True

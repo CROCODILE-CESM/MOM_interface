@@ -1,8 +1,8 @@
 ./xmlchange OCN_NX=60
 ./xmlchange OCN_NY=60
-./xmlchange OCN_DOMAIN_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_352fd1.nc
-./xmlchange ICE_DOMAIN_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_352fd1.nc
-./xmlchange MASK_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_352fd1.nc
+./xmlchange OCN_DOMAIN_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_5490e0.nc
+./xmlchange ICE_DOMAIN_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_5490e0.nc
+./xmlchange MASK_MESH=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc/ESMF_mesh_panama1_5490e0.nc
 ./xmlchange ATM_GRID=TL319
 ./xmlchange LND_GRID=TL319
 ./xmlchange ATM_DOMAIN_MESH=/glade/campaign/cesm/cesmdata/inputdata/share/meshes/TL319_151007_ESMFmesh.nc
