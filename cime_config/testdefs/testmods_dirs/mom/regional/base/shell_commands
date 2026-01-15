@@ -11,3 +11,6 @@
 ./xmlchange RUN_STARTDATE=2000-01-01
 ./xmlchange ROF2OCN_LIQ_RMAPNAME=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama/GLOFAS_to_panama1_map_r20_f40_nnsm.nc
 ./xmlchange ROF2OCN_ICE_RMAPNAME=/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama/GLOFAS_to_panama1_map_r20_f40_nnsm.nc
+
+# Set PE Layout
+./xmlchange NTASKS_OCN=20
