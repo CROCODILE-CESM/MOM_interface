@@ -1,4 +1,4 @@
-INPUTDIR = /glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/testing_data/panama-bgc
+INPUTDIR = "$DIN_LOC_ROOT/ocn/mom/croc/testing_data/panama-bgc"
 TRIPOLAR_N = False
 REENTRANT_X = False
 REENTRANT_Y = False
@@ -50,7 +50,7 @@ OBC_TIDE_REF_DATE = 2000, 01, 01
 MAX_FIELDS = 400
 
 ! MARBL initial conditions file
-MARBL_TRACERS_IC_FILE = ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc
+MARBL_TRACERS_IC_FILE = ecosys_jan_IC_omip_latlon_1x1_180W_c250613.nc
 
 ! MARBL sedimentary iron flux file
 MARBL_FESEDFLUX_FILE = fesedflux_total_reduce_oxic_panama1_5490e0.nc
@@ -58,11 +58,14 @@ MARBL_FESEDFLUX_FILE = fesedflux_total_reduce_oxic_panama1_5490e0.nc
 ! MARBL event iron flux file
 MARBL_FEVENTFLUX_FILE = feventflux_5gmol_panama1_5490e0.nc
 
+! MARBL event iron flux reduced file
+MARBL_FESEDFLUXRED_FILE = feventfluxred_5gmol_panama1_5490e0.nc
+
 ! Enable river nutrient fluxes in MOM6
 READ_RIV_FLUXES = True
 
 ! River nutrient flux file
-RIV_FLUX_FILE = river_nutrients_panama1_5490e0_nnsm.nc
+RIV_FLUX_FILE = riv_nutri.nc
 
 ! Initial conditions
 INIT_LAYERS_FROM_Z_FILE = True
