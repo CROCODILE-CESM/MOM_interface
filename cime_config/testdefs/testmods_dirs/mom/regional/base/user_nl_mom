@@ -1,4 +1,4 @@
-INPUTDIR = "ocn/mom/croc/testing_data/panama"
+!INPUTDIR is set by the MOM_input.yaml because it requires a hard-coded path
 TRIPOLAR_N = False
 REENTRANT_X = False
 REENTRANT_Y = False
