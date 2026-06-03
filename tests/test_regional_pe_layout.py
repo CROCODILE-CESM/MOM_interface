@@ -1,11 +1,12 @@
 """
 Tests for regional MOM6 pesize tiers in config_pes.xml.
 
-Simulates CIME's last-match-wins logic:
-  - For a given (grid, machine, pesize, compset), walk all <pes> entries in
-    document order and apply each that matches; the last match wins.
+Simulates CIME's highest-score-wins logic (from CIME/XML/pes.py):
+  - points = grid(3) + mach(7) + compset(2) + pesize(1)
+  - If two entries tie, CIME raises an error — so each case must have exactly
+    one max-score match.
   - grid/compset attributes are Python regex patterns; pesize/mach are exact
-    string matches (with "any" matching everything).
+    string matches (with "any" matching everything and scoring 0).
 """
 
 import re
@@ -39,24 +40,35 @@ def load_all_pes_entries(path):
 
 def match_pes(entries, grid_alias, machine, pesize, compset):
     """
-    Apply last-match-wins: return the merged dict of the last matching entry's values.
+    Replicate CIME's highest-score-wins logic (pes.py _find_matches).
+    Raises AssertionError if two entries tie (mirrors CIME's fatal expect()).
     """
-    result = {}
+    max_points = -1
+    best = None
     for grid_pat, mach_pat, pes_pesize, compset_pat, values in entries:
-        # grid: "any" matches all; otherwise regex search
         if grid_pat != "any" and not re.search(grid_pat, grid_alias):
             continue
-        # mach: "any" matches all; otherwise exact match
         if mach_pat != "any" and mach_pat != machine:
             continue
-        # pesize: "any" matches all; otherwise exact match
         if pes_pesize != "any" and pes_pesize != pesize:
             continue
-        # compset: "any" matches all; otherwise regex search
         if compset_pat != "any" and not re.search(compset_pat, compset):
             continue
-        result.update(values)
-    return result
+        points = (
+            int(grid_pat != "any") * 3
+            + int(mach_pat != "any") * 7
+            + int(compset_pat != "any") * 2
+            + int(pes_pesize != "any")
+        )
+        if points > max_points:
+            max_points = points
+            best = values
+        elif points == max_points:
+            raise AssertionError(
+                f"CIME tie: two entries score {points} for "
+                f"pesize={pesize!r} compset={compset!r}"
+            )
+    return best or {}
 
 
 # ---------------------------------------------------------------------------

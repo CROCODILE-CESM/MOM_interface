@@ -40,10 +40,11 @@
       </pes>
     </mach>
     <mach name="derecho">
-      <!-- Regional pesize tiers for Derecho: XS (default), S, M, L.
+      <!-- Regional pesize tiers for Derecho: XS (pecount XS), S, M (default), L.
            XS: 1 node total. S/M/L: data/CPL/ICE share node 0, OCN on dedicated nodes.
-           Each tier has a base entry (any compset) and a MARBL-BIO override (~3x OCN tasks).
-           Last-match-wins: base entry first, MARBL-BIO override second. -->
+           Each of S/M/L has two entries: base (excludes MARBL-BIO via negative lookahead)
+           and a MARBL-BIO override (~3x OCN tasks). CIME errors on ties (equal score),
+           so the base uses (?!.*MARBL-BIO) to guarantee no overlap with the MARBL entry. -->
 
       <!-- ======== XS (default) ======== -->
       <pes pesize="any" compset="_DATM.+_MOM6%[^_]*REGIONAL.+_SWAV">
@@ -81,7 +82,7 @@
       </pes>
 
       <!-- ======== S ======== -->
-      <pes pesize="S" compset="_DATM.+_MOM6%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="S" compset="_DATM.+_MOM6%(?!.*MARBL-BIO)[^_]*REGIONAL.+_SWAV">
         <comment>Regional S: 2 nodes. Data/CPL/ICE on node 0, OCN on node 1.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
@@ -149,7 +150,7 @@
       </pes>
 
       <!-- ======== M ======== -->
-      <pes pesize="M" compset="_DATM.+_MOM6%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="M" compset="_DATM.+_MOM6%(?!.*MARBL-BIO)[^_]*REGIONAL.+_SWAV">
         <comment>Regional M: 4 nodes. Data/CPL/ICE on node 0, OCN on nodes 1-3.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
@@ -217,7 +218,7 @@
       </pes>
 
       <!-- ======== L ======== -->
-      <pes pesize="L" compset="_DATM.+_MOM6%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="L" compset="_DATM.+_MOM6%(?!.*MARBL-BIO)[^_]*REGIONAL.+_SWAV">
         <comment>Regional L: 8 nodes. Data/CPL/ICE on node 0, OCN on nodes 1-7.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
