@@ -114,7 +114,7 @@
           <rootpe_glc>0</rootpe_glc>
         </rootpe>
       </pes>
-      <pes pesize="S" compset="_DATM.+_MOM6%[^_]*MARBL-BIO%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="S" compset="_DATM.+_MOM6%[^_]*(MARBL-BIO[^_]*REGIONAL|REGIONAL[^_]*MARBL-BIO).+_SWAV">
         <comment>Regional S + MARBL-BIO: 4 nodes. Data/CPL/ICE on node 0, OCN on nodes 1-3.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
@@ -182,7 +182,7 @@
           <rootpe_glc>0</rootpe_glc>
         </rootpe>
       </pes>
-      <pes pesize="M" compset="_DATM.+_MOM6%[^_]*MARBL-BIO%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="M" compset="_DATM.+_MOM6%[^_]*(MARBL-BIO[^_]*REGIONAL|REGIONAL[^_]*MARBL-BIO).+_SWAV">
         <comment>Regional M + MARBL-BIO: 10 nodes. Data/CPL/ICE on node 0, OCN on nodes 1-9.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
@@ -250,7 +250,7 @@
           <rootpe_glc>0</rootpe_glc>
         </rootpe>
       </pes>
-      <pes pesize="L" compset="_DATM.+_MOM6%[^_]*MARBL-BIO%[^_]*REGIONAL.+_SWAV">
+      <pes pesize="L" compset="_DATM.+_MOM6%[^_]*(MARBL-BIO[^_]*REGIONAL|REGIONAL[^_]*MARBL-BIO).+_SWAV">
         <comment>Regional L + MARBL-BIO: 21 nodes. Data/CPL/ICE on node 0, OCN on nodes 1-20.</comment>
         <ntasks>
           <ntasks_atm>128</ntasks_atm>
