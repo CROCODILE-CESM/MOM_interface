@@ -34,7 +34,10 @@ Global:
         description: |
             "The directory in which input files are found."
         datatype: string
-        value: ${DIN_LOC_ROOT}/ocn/mom/${OCN_GRID}
+        value: 
+            $MOM6_DOMAIN_TYPE == "REGIONAL" and $TEST == True and $MARBL_CONFIG == "off": ${DIN_LOC_ROOT}/ocn/mom/croc/testing_data/panama
+            $MOM6_DOMAIN_TYPE == "REGIONAL" and $TEST == True and $MARBL_CONFIG != "off": ${DIN_LOC_ROOT}/ocn/mom/croc/testing_data/panama-bgc
+            else: ${DIN_LOC_ROOT}/ocn/mom/${OCN_GRID}
     TRIPOLAR_N:
         description: |
             "[Boolean] default = False
