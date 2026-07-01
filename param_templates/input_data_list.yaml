@@ -63,18 +63,16 @@ mom.input_data_list:
     MARBL_TRACERS_IC_FILE:
         $MARBL_CONFIG == "latest": "${DIN_LOC_ROOT}/ocn/mom/grid_indpt/ecosys_jan_IC_omip_latlon_1x1_180W_c250613.nc"
         $MARBL_CONFIG == "latest+4p2z": "${DIN_LOC_ROOT}/ocn/mom/grid_indpt/ecosys_jan_IC_omip_latlon_1x1_180W_c250613.nc"
-    MARBL_FEFLUX_FILE:
+    MARBL_FE_INTERIOR_SOURCE_FILE:
         '"BASE_BIO_ON=TRUE" in $MARBL_TRACER_OPTS':
             $OCN_GRID == "tx2_3v2": "${INPUTDIR}/fesedflux_2024algo_tx2_3v2.c251229.nc"
             $OCN_GRID == "tx2_3v3": "${INPUTDIR}/fefluxes_sed2024algo_vent2026algo_tx2_3v3.c260625.nc"
     RIV_FLUX_FILE:
         '"BASE_BIO_ON=TRUE" in $MARBL_TRACER_OPTS':
-            $OCN_GRID == "tx2_3v2":
-                $ROF_GRID == "JRA025": "${INPUTDIR}/riv_nut.gnews_gnm.rJRA025_to_tx2_3v2_nnsm_e333r100_230415.20240202.nc"
-                $ROF_GRID == "r05": "${INPUTDIR}/riv_nut.gnews_gnm.r05_to_tx2_3v2_nnsm_e250r250_230914.20240202.nc"
-            $OCN_GRID == "tx2_3v3":
-                $ROF_GRID == "JRA025": "${INPUTDIR}/riv_nut.gnews_gnm.rJRA025_to_tx2_3v3_nnsm_e100r100_260306.20260424.nc"
-                $ROF_GRID == "r05": "${INPUTDIR}/riv_nut.gnews_gnm.r05_to_tx2_3v3_nnsm_e100r100_260306.20260424.nc"
+            '$OCN_GRID == "tx2_3v2" and $ROF_GRID == "JRA025"': "${INPUTDIR}/riv_nut.gnews_gnm.rJRA025_to_tx2_3v2_nnsm_e333r100_230415.20240202.nc"
+            '$OCN_GRID == "tx2_3v2" and $ROF_GRID == "r05"': "${INPUTDIR}/riv_nut.gnews_gnm.r05_to_tx2_3v2_nnsm_e250r250_230914.20240202.nc"
+            '$OCN_GRID == "tx2_3v3" and $ROF_GRID == "JRA025"': "${INPUTDIR}/riv_nut.gnews_gnm.rJRA025_to_tx2_3v3_nnsm_e100r100_260306.20260424.nc"
+            '$OCN_GRID == "tx2_3v3" and $ROF_GRID == "r05"': "${INPUTDIR}/riv_nut.gnews_gnm.r05_to_tx2_3v3_nnsm_e100r100_260306.20260424.nc"
     MARBL_D14C_FILE_1:
         '"ABIO_DIC_ON=TRUE" in $MARBL_TRACER_OPTS': "${DIN_LOC_ROOT}/ocn/mom/grid_indpt/atm_delta_C14_CMIP6_sector1_global_1850-2015_yearly_v2.0_c240202.nc"
     MARBL_D14C_FILE_2:
