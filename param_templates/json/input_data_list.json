@@ -84,7 +84,7 @@
       "MARBL_FE_INTERIOR_SOURCE_FILE": {
          "\"BASE_BIO_ON=TRUE\" in $MARBL_TRACER_OPTS": {
             "$OCN_GRID == \"tx2_3v2\"": "${INPUTDIR}/fesedflux_2024algo_tx2_3v2.c251229.nc",
-            "$OCN_GRID == \"tx2_3v3\"": "${INPUTDIR}/fefluxes_sed2024algo_vent2026algo_tx2_3v3.c260625.nc"
+            "$OCN_GRID == \"tx2_3v3\"": "${INPUTDIR}/fe_sources_sed2024algo_vent2026algo_tx2_3v3.c260701.nc"
          }
       },
       "RIV_FLUX_FILE": {
