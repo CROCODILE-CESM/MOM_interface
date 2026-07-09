@@ -274,12 +274,11 @@
          }
       },
       "MARBL_IC_MIN_VAL": {
-         "description": "Minimum value of tracer initial conditions\n",
+         "description": "\"Minimum value of tracer initial conditions\n (when initializing from Z)\"\n",
          "datatype": "real",
          "units": "conc units",
          "value": {
-            "$TEST": "1e-50",
-            "$RUN_TYPE == \"hybrid\"": "-1e30"
+            "$TEST": "1e-50"
          }
       },
       "MARBL_FE_INTERIOR_SOURCE_FILE": {

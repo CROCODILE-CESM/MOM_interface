@@ -370,12 +370,12 @@ Global:
             $RUN_TYPE == "hybrid": False
     MARBL_IC_MIN_VAL:
         description: |
-            Minimum value of tracer initial conditions
+            "Minimum value of tracer initial conditions
+             (when initializing from Z)"
         datatype: real
         units: conc units
         value:
             $TEST: 1e-50
-            $RUN_TYPE == "hybrid": -1e30
     MARBL_FE_INTERIOR_SOURCE_FILE:
         description: |
             "Name of file containing iron sediment fluxes and vent
