@@ -278,14 +278,14 @@
          "datatype": "real",
          "units": "conc units",
          "value": {
-            "$TEST": "1e-50"
+            "\"BASE_BIO_ON=TRUE\" in $MARBL_TRACER_OPTS and $TEST": "1e-50"
          }
       },
       "MARBL_FE_INTERIOR_SOURCE_FILE": {
          "description": "\"Name of file containing iron sediment fluxes and vent\n flux forcing fields for the MARBL tracer package.\"\n",
          "datatype": "string",
          "value": {
-            "\"BASE_BIO_ON=TRUE\" in $MARBL_TRACER_OPTS and $OCN_GRID == \"tx2_3v2\"": "fesedflux_2024algo_tx2_3v2.c251229.nc",
+            "\"BASE_BIO_ON=TRUE\" in $MARBL_TRACER_OPTS and $OCN_GRID == \"tx2_3v2\"": "fe_sources_sed2024algo_tx2_3v2_20260711.nc",
             "\"BASE_BIO_ON=TRUE\" in $MARBL_TRACER_OPTS and $OCN_GRID == \"tx2_3v3\"": "fe_sources_sed2024algo_vent2026algo_tx2_3v3.c260701.nc"
          }
       },
