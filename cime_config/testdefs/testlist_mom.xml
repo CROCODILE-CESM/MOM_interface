@@ -133,17 +133,10 @@
       <option name="wallclock">00:30:00</option>
     </options>
   </test>
-  <test name="ERS" grid="TL319_t232" compset="G1850MARBL_JRA">
-    <machines>
-      <machine name="derecho" compiler="intel" category="prebeta"/>
-    </machines>
-    <options>
-      <option name="wallclock">00:30:00</option>
-    </options>
-  </test>
   <test name="ERS" grid="TL319_t233" compset="G1850MARBL_JRA">
     <machines>
       <machine name="derecho" compiler="intel" category="aux_mom_MARBL"/>
+      <machine name="derecho" compiler="intel" category="prebeta"/>
     </machines>
     <options>
       <option name="wallclock">00:30:00</option>
