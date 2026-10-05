@@ -1,0 +1,4 @@
+dtmax = 900.0
+dtcfl = 225.0
+dtcfli = 225.0
+dtmin = 10.0
