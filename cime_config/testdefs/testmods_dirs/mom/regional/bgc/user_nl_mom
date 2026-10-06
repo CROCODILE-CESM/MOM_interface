@@ -34,7 +34,7 @@ MARBL_TRACERS_IC_FILE = ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc
 MARBL_FE_INTERIOR_SOURCE_FILE = fe_sources_panama1_1c3aac.nc
 
 ! River nutrient flux file
-RIV_FLUX_FILE = river_nutrients_panama1_1c3aac_nnsm.nc
+RIV_FLUX_FILE = river_nutrients_panama1_e09757_nnsm.nc
 
 ! Initial conditions
 INIT_LAYERS_FROM_Z_FILE = True
