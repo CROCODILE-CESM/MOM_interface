@@ -6,7 +6,7 @@ kmt_file = "$DIN_LOC_ROOT/ocn/mom/croc/testing_data/panama/cice_grid_panama1_1c3
 ! CICE dynamics substeps: ice at 1.0 m/s crosses at most 0.25 of the smallest cell (5482 m) per substep of the 3600 s ice time step
 ndtd = 3
 
-ice_ic = '$DIN_LOC_ROOT/ocn/mom/croc/testing_data/panama/cice_ic_panama1_1c3aaa.nc'
+ice_ic = '$DIN_LOC_ROOT/ocn/mom/croc/testing_data/panama/cice_ic_panama1_6c83a5.nc'
 ns_boundary_type = 'zero_gradient'
 ew_boundary_type = 'zero_gradient'
 advection = 'upwind'
